@@ -1,0 +1,16 @@
+PowerPlatformResources
+| where type startswith "microsoft.powerapps/"
+| project
+appId = name,
+modelDrivenAppId= tostring(properties.appModuleId),
+appType = type,
+region = location,
+appDisplayName = tostring(properties.displayName),
+environmentId = tostring(properties.environmentId),
+ isQuarantined =  tobool(properties.isQuarantined),
+ownerId = tostring(properties.ownerId),
+createdAt = todatetime(properties.createdAt),
+createdBy = tostring(properties.createdBy),
+lastModifiedAt = todatetime(properties.lastModifiedAt),
+lastModifiedBy = tostring(properties.lastModifiedBy)
+| order by environmentId asc
