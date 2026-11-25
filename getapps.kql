@@ -4,6 +4,7 @@ PowerPlatformResources
 appId = name,
 modelDrivenAppId= tostring(properties.appModuleId),
 appType = type,
+subAppType = tostring(properties.subType),
 region = location,
 appDisplayName = tostring(properties.displayName),
 environmentId = tostring(properties.environmentId),
