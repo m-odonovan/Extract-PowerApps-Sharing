@@ -1,0 +1,11 @@
+PowerPlatformResources
+| where type startswith  "Microsoft.PowerPlatform/environments"
+| project
+Id = name,
+region = location,
+displayName = tostring(properties.displayName),
+isManaged = tostring(properties.isManaged),
+environmentType =  tostring(properties.environmentType),
+createdBy = tostring(properties.createdBy),
+createdAt = tostring(properties.createdAt),
+environmentGroupId = tostring(properties.environmentGroupId)
